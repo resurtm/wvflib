@@ -7,6 +7,7 @@ class TestCube(TestCase):
     def test_common(self):
         self.assertEqual(self.f.name, 'cube.obj')
         self.assertTrue(len(self.f.objects) == 1)
+        self.assertEqual(self.f.objects[0].name, 'cube')
 
     def test_materials(self):
         libs = self.f.material_libs
