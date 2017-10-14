@@ -42,6 +42,10 @@ class BaseReader(object):
     def params(self):
         return self.__params
 
+    @property
+    def token_info(self):
+        return self.__parsed_token, self.__token_parser
+
     def __parse_line(self):
         tokens = self.__line.split(' ')
         self.__params = tokens[1:]

@@ -8,3 +8,13 @@ class Vector:
     @property
     def values(self):
         return self.x, self.y, self.z, self.w
+
+
+class TexCoord:
+    def __init__(self):
+        self.u = 0.0
+        self.v = 0.0
+
+    @property
+    def values(self):
+        return self.u, self.v

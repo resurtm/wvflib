@@ -9,7 +9,7 @@ class Object:
         self.normals = []
 
     @property
-    def empty(self) -> bool:
+    def empty(self):
         return len(self.vertices) == 0
 
 

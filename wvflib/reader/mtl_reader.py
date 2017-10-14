@@ -14,16 +14,22 @@ class MtlReader(BaseReader):
         self.__mat.name = self.params[0]
 
     def _parse_int(self):
-        pass
+        attr = self.token_info[0]
+        self.__mat._attributes[attr] = int(self.params[0])
 
     def _parse_float(self):
-        pass
+        attr = self.token_info[0]
+        self.__mat._attributes[attr] = float(self.params[0])
 
     def _parse_trio_float(self):
-        pass
+        attr = self.token_info[0]
+        self.__mat._attributes[attr] = (float(self.params[0]),
+                                        float(self.params[1]),
+                                        float(self.params[2]))
 
     def _parse_str(self):
-        pass
+        attr = self.token_info[0]
+        self.__mat._attributes[attr] = str(self.params[0])
 
     def before_read(self, file_name):
         self.__mat_lib = MaterialLib()
