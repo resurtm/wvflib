@@ -1,0 +1,7 @@
+/wvflib_venv[23]/
+/.idea/
+/*.egg-info/
+*.py[doc]
+__pycache/
+/build/
+/dist/
