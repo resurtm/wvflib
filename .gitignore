@@ -5,3 +5,5 @@
 __pycache/
 /build/
 /dist/
+/coverage/
+/.coverage
