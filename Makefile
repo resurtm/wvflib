@@ -31,3 +31,6 @@ tests:
 
 publish: tests
 	$(PYTHON_CMD) $(SETUP_PY_FILE) sdist bdist_wheel upload
+
+push: tests
+	git push origin master && git push origin --tags

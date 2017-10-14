@@ -10,7 +10,7 @@ def readme():
 
 setup(
     name='wvflib',
-    version='0.0.1',
+    version='0.0.2',
     description='Wavefront OBJ Files Loader/Saver',
     long_description=readme(),
     url='https://github.com/resurtm/wvflib',
