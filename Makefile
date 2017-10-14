@@ -14,6 +14,8 @@ COVERAGE_HTML_DIR=coverage/html
 default: tests
 
 tests:
+	date
+
 	$(COVERAGE_CMD) run --source=$(LIB_DIR) -m unittest discover -s $(TESTS_DIR)
 
 	mkdir -p $(COVERAGE_DIR)
@@ -22,3 +24,5 @@ tests:
 	$(COVERAGE_CMD) report -m
 	$(COVERAGE_CMD) report -m > $(COVERAGE_DIR)/coverage.txt
 	$(COVERAGE_CMD) html --directory=$(COVERAGE_HTML_DIR)
+
+	date
