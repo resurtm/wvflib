@@ -37,6 +37,36 @@ class TestCube(TestCase):
         self.assertEqual(mat.map_Ka, 'cube.png')
         self.assertEqual(mat.map_Kd, 'cube.png')
 
+    def test_vertices(self):
+        self.assertEqual(len(self.f.objects[0].vertices), 8)
+        self.assertEqual(self.f.objects[0].vertices[0].values,
+                         (-0.5, -0.5, 0.5, 1.0))
+        self.assertEqual(self.f.objects[0].vertices[7].values,
+                         (0.5, -0.5, -0.5, 1.0))
+
+    def test_tex_coords(self):
+        self.assertEqual(len(self.f.objects[0].tex_coords), 4)
+        self.assertEqual(self.f.objects[0].tex_coords[0].values, (0.0, 0.0))
+        self.assertEqual(self.f.objects[0].tex_coords[3].values, (1.0, 1.0))
+
+    def test_normals(self):
+        self.assertEqual(len(self.f.objects[0].normals), 6)
+        self.assertEqual(self.f.objects[0].normals[0].values,
+                         (0.0, 0.0, 1.0, 1.0))
+        self.assertEqual(self.f.objects[0].normals[5].values,
+                         (-1.0, 0.0, 0.0, 1.0))
+
+    def test_groups(self):
+        self.assertEqual(len(self.f.objects[0].groups), 1)
+        self.assertEqual(self.f.objects[0].groups[0].name, 'cube')
+
+    def test_faces(self):
+        self.assertEqual(len(self.f.objects[0].groups[0].faces), 12)
+        self.assertEqual(self.f.objects[0].groups[0].faces[0],
+                         ((1, 1, 1), (2, 2, 1), (3, 3, 1)))
+        self.assertEqual(self.f.objects[0].groups[0].faces[11],
+                         ((5, 3, 6), (1, 2, 6), (3, 4, 6)))
+
     @staticmethod
     def object_name():
         return 'cube'

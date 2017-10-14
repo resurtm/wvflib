@@ -18,3 +18,9 @@ class TexCoord:
     @property
     def values(self):
         return self.u, self.v
+
+
+class Face:
+    def __init__(self):
+        # tuple of tuples
+        self.vertices = ()
