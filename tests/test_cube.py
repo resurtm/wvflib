@@ -5,6 +5,9 @@ from tests.base import TestCase
 
 class TestCube(TestCase):
     def test_common(self):
+        f = self.f
+        f = f
+
         self.assertEqual(self.f.name, 'cube.obj')
         self.assertTrue(len(self.f.objects) == 1)
         self.assertEqual(self.f.objects[0].name, 'cube')

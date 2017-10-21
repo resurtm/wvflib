@@ -40,20 +40,22 @@ class MtlReader(BaseReader):
         return self.__mat_lib
 
     @staticmethod
-    def parsers():
-        return {'newmtl': '_parse_material',
-                'Ns': '_parse_float',
-                'Ni': '_parse_float',
-                'd': '_parse_float',
-                'Tr': '_parse_float',
-                'Tf': '_parse_trio_float',
-                'illum': '_parse_int',
-                'Ka': '_parse_trio_float',
-                'Kd': '_parse_trio_float',
-                'Ks': '_parse_trio_float',
-                'Ke': '_parse_trio_float',
-                'map_Ka': '_parse_str',
-                'map_Kd': '_parse_str'}
+    def parsers(only_attrs=False):
+        parsers = {'Ns': '_parse_float',
+                   'Ni': '_parse_float',
+                   'd': '_parse_float',
+                   'Tr': '_parse_float',
+                   'Tf': '_parse_trio_float',
+                   'illum': '_parse_int',
+                   'Ka': '_parse_trio_float',
+                   'Kd': '_parse_trio_float',
+                   'Ks': '_parse_trio_float',
+                   'Ke': '_parse_trio_float',
+                   'map_Ka': '_parse_str',
+                   'map_Kd': '_parse_str'}
+        if not only_attrs:
+            parsers['newmtl'] = '_parse_material'
+        return parsers
 
     def __ensure_mat_pushed(self):
         if self.__mat is None:

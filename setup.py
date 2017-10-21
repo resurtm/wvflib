@@ -2,19 +2,24 @@
 
 from setuptools import setup
 
+from wvflib import version
+
 
 def readme():
     with open('README.rst') as f:
         return f.read()
 
 
+download_url = 'https://github.com/resurtm/wvflib/archive/v{version}.tar.gz'
+download_url = download_url.format(version=version)
+
 setup(
     name='wvflib',
-    version='0.0.2',
+    version=version,
     description='Wavefront OBJ Files Loader/Saver',
     long_description=readme(),
     url='https://github.com/resurtm/wvflib',
-    download_url='https://github.com/resurtm/wvflib/archive/v0.0.1.tar.gz',
+    download_url=download_url,
     author='resurtm',
     author_email='resurtm@gmail.com',
     license='MIT',

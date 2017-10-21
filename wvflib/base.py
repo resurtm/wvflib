@@ -8,10 +8,6 @@ class Object:
         self.tex_coords = []
         self.normals = []
 
-    @property
-    def empty(self):
-        return len(self.vertices) == 0
-
 
 class File:
     def __init__(self):
