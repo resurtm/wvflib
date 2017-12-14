@@ -10,8 +10,8 @@ env:
   - TOX_ENV=flake8
 
 install:
+  - pip install -r requirements.txt
   - pip install tox flake8
-  - pip install -r requirements.txt --use-mirrors
 
 script:
   - tox -e $TOX_ENV
