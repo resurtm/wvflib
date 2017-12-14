@@ -1,9 +1,11 @@
 /venv/
-/.idea/
 /*.egg-info/
+/.idea/
 *.py[doc]
 __pycache/
 /build/
 /dist/
 /coverage/
 /.coverage
+/.tox/
+/.eggs/

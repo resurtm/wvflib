@@ -1,8 +1,22 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
 
 from wvflib import version
+
+
+class Tox(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import tox
+        errcode = tox.cmdline(self.test_args)
+        cov.stop()
+        sys.exit(errcode)
 
 
 def readme():
@@ -46,10 +60,11 @@ setup(
         'Topic :: Games/Entertainment',
         'Topic :: Multimedia :: Graphics',
     ],
-    packages=['wvflib'],
+    packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=[
-        'coverage',
-    ],
+    install_requires=[],
+    tests_require=['tox', 'pytest'],
+    cmdclass={'test': Tox},
+    platforms='any',
 )
