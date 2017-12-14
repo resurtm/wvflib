@@ -64,7 +64,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[],
-    tests_require=['tox', 'pytest'],
+    tests_require=['tox'],
     cmdclass={'test': Tox},
     platforms='any',
 )
