@@ -12,4 +12,4 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - tox
+  - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
