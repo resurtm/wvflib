@@ -1,5 +1,4 @@
-/wvflib_venv[23]/
-/wvflib_venv/
+/venv/
 /.idea/
 /*.egg-info/
 *.py[doc]
