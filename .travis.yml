@@ -8,8 +8,8 @@ python:
   - 3.6
 
 install:
-  - pip install tox tox-travis flake8
+  - pip install tox flake8
   - pip install -r requirements.txt
 
 script:
-  - tox && tox -e flake8
+  - tox
